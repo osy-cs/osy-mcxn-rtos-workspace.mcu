@@ -1,0 +1,5 @@
+eclipse.preferences.version=1
+sdk.component.overwrite.ask=true
+sdk.component.overwrite.policy=Replace
+sdk.install.location=sdk.install.workspace
+sdk.paths.pref=/poli/home/tmp/mcxn/mcuxpresso/SDKPackages\:/poli/home/vyuka/apps/git/apps-mcxn-workspace.mcu-25.6/mcuxpresso/SDKPackages\:\:/tmp/apps-mcxn-workspace.mcu-25.6/mcuxpresso/SDKPackages\:/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/mcuxpresso/SDKPackages\:

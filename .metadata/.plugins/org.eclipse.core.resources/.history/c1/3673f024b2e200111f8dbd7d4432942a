@@ -1,0 +1,9 @@
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/drivers/fsl_clock.h:1496:20:void CLOCK_EnableClock(clock_ip_name_t)	24	static
+../source/demo-pwm.cpp:38:6:void _mcu_initialization()	8	static
+../source/demo-pwm.cpp:146:6:void task_kit_led_blink(void*)	24	static
+../source/demo-pwm.cpp:164:6:void task_snake_left(void*)	24	static
+../source/demo-pwm.cpp:182:6:void task_snake_right(void*)	24	static
+../source/demo-pwm.cpp:201:6:void task_switches(void*)	32	static
+../source/demo-pwm.cpp:252:5:int main()	16	static
+../source/demo-pwm.cpp:291:1:void __static_initialization_and_destruction_0()	16	static
+../source/demo-pwm.cpp:291:1:cpp)	8	static

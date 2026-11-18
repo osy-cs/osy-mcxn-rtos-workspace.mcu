@@ -1,0 +1,27 @@
+freertos/freertos-kernel-upstream/stream_buffer.o \
+ freertos/freertos-kernel-upstream/stream_buffer.d: \
+ ../freertos/freertos-kernel-upstream/stream_buffer.c \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel-upstream/include/FreeRTOS.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel/template/FreeRTOSConfig.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel/template/ARM_CM33_3_priority_bits/FreeRTOSConfig_Gen.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel-upstream/include/projdefs.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel-upstream/include/portable.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel-upstream/include/deprecated_definitions.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel-upstream/include/mpu_wrappers.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel-upstream/include/task.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel-upstream/include/list.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel-upstream/include/stream_buffer.h
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel-upstream/include/FreeRTOS.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel/template/FreeRTOSConfig.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel/template/ARM_CM33_3_priority_bits/FreeRTOSConfig_Gen.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel-upstream/include/projdefs.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel-upstream/include/portable.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel-upstream/include/deprecated_definitions.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel/portable/GCC/ARM_CM33_NTZ/non_secure/portmacro.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel/portable/GCC/ARM_CM33_NTZ/non_secure/portmacrocommon.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel-upstream/include/mpu_wrappers.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel-upstream/include/task.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel-upstream/include/list.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-sem-int/freertos/freertos-kernel-upstream/include/stream_buffer.h:

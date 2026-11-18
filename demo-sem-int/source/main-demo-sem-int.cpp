@@ -1,0 +1,71 @@
+// **************************************************************************
+//
+//                  FreeRTOS demo program for OSY labs
+//
+// Subject:         Operating systems
+// Topic:           FreeRTOS
+// Author:          Petr Olivka, petr.olivka@vsb.cz, 11/2026
+// Organization:    Department of Computer Science, FEECS,
+//                  VSB-Technical University of Ostrava, CZ
+//
+// File:            Semaphores and Interrupts Demo
+//
+// **************************************************************************
+
+/**
+ * @file    main-demo-pwm.cpp
+ * @brief   Application entry point.
+ */
+
+#include <demo-sem-int-bin.h>
+#include "FreeRTOS.h"
+#include "task.h"
+
+#include <stdio.h>
+#include <functional>
+#include <algorithm>
+#include "board.h"
+#include "peripherals.h"
+#include "pin_mux.h"
+#include "clock_config.h"
+#include "fsl_debug_console.h"
+
+#include "mcxn-kit.h"
+
+// **************************************************************************
+//! System initialization. Do not modify it!!!
+void _mcu_initialization() __attribute__(( constructor( 0x100 ) ));
+
+void _mcu_initialization()
+{
+    BOARD_InitBootPins();
+    BOARD_InitBootClocks();
+    BOARD_InitBootPeripherals();
+    BOARD_InitDebugConsole();
+    CLOCK_EnableClock( kCLOCK_Gpio0 );
+    CLOCK_EnableClock( kCLOCK_Gpio1 );
+    CLOCK_EnableClock( kCLOCK_Gpio2 );
+    CLOCK_EnableClock( kCLOCK_Gpio3 );
+    CLOCK_EnableClock( kCLOCK_Gpio4 );
+}
+
+// Start application
+int main(void)
+{
+    PRINTF( "FreeRTOS PWM demo program .\r\n" );
+    PRINTF( "GPIO interrupts are enabled.\r\n" );
+    PRINTF( "Red LEDs are set to PWM 5% and one LED is runs from side to side.\r\n" );
+    PRINTF( "P3_18 button changes mode of RGB LEDs between PWM and SET.\r\n" );
+    PRINTF( "P3_19 button select one RGB color in SET mode.\r\n" );
+    PRINTF( "P3_20 button decrease PWM of selected color in SET mode.\r\n" );
+    PRINTF( "P3_21 button increase PWM of selected color in SET mode.\r\n" );
+
+    // Initialize demo application
+    InitDemoApp();
+
+    vTaskStartScheduler();
+
+    while ( 1 );
+
+    return 0 ;
+}

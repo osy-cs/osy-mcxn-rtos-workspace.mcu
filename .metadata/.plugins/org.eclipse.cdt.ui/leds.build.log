@@ -1,0 +1,27 @@
+18:45:35 **** Incremental Build of configuration Debug for project leds ****
+make -r -j20 all 
+Building file: ../source/main-leds.cpp
+Invoking: MCU C++ Compiler
+arm-none-eabi-c++ -DCPU_MCXN947VDF -DCPU_MCXN947VDF_cm33 -DCPU_MCXN947VDF_cm33_core0 -DSDK_DEBUGCONSOLE=1 -DSERIAL_PORT_TYPE_UART=1 -D__MCUXPRESSO -D__USE_CMSIS -DDEBUG -D__NEWLIB__ -DSDK_OS_FREE_RTOS -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/drivers" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/device" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/utilities/debug_console" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/component/uart" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/utilities/debug_console/config" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/component/serial_manager" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/component/lists" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/device/periph" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/utilities" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/CMSIS" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/CMSIS/m-profile" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/utilities/str" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/freertos/freertos-kernel-upstream/include" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/freertos/freertos-kernel/include" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/freertos/freertos-kernel/portable/GCC/ARM_CM33_NTZ/non_secure" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/board" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/freertos/freertos-kernel/template" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/freertos/freertos-kernel/template/ARM_CM33_3_priority_bits" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/mcxn-kit" -I"/tmp/apps-mcxn-workspace.mcu-25.6/leds/source" -O0 -fno-common -g3 -gdwarf-4 -Wall -c -ffunction-sections -fdata-sections -fno-builtin -fno-rtti -fno-exceptions -fmerge-constants -fmacro-prefix-map="../source/"= -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"source/main-leds.d" -MT"source/main-leds.o" -MT"source/main-leds.d" -o "source/main-leds.o" "../source/main-leds.cpp"
+Finished building: ../source/main-leds.cpp
+ 
+Building target: leds.axf
+Invoking: MCU C++ Linker
+arm-none-eabi-c++ -nostdlib -Xlinker -Map="leds.map" -Xlinker --gc-sections -Xlinker -print-memory-usage -Xlinker --sort-section=alignment -Xlinker --cref -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -T leds_Debug.ld -o "leds.axf" ./utilities/str/fsl_str.o  ./utilities/debug_console/fsl_debug_console.o  ./utilities/fsl_assert.o  ./startup/boot_multicore_slave.o ./startup/startup_mcxn947_cm33_core0.o  ./source/cpp_config.o ./source/main-leds.o ./source/semihost_hardfault.o  ./mcxn-kit/mcxn-kit-delay.o ./mcxn-kit/mcxn-kit-digital-io.o ./mcxn-kit/mcxn-kit-ticker.o  ./freertos/freertos-kernel/portable/MemMang/heap_4.o  ./freertos/freertos-kernel/portable/GCC/ARM_CM33_NTZ/non_secure/mpu_wrappers_v2_asm.o ./freertos/freertos-kernel/portable/GCC/ARM_CM33_NTZ/non_secure/port.o ./freertos/freertos-kernel/portable/GCC/ARM_CM33_NTZ/non_secure/portasm.o  ./freertos/freertos-kernel-upstream/croutine.o ./freertos/freertos-kernel-upstream/event_groups.o ./freertos/freertos-kernel-upstream/list.o ./freertos/freertos-kernel-upstream/queue.o ./freertos/freertos-kernel-upstream/stream_buffer.o ./freertos/freertos-kernel-upstream/tasks.o ./freertos/freertos-kernel-upstream/timers.o  ./drivers/fsl_clock.o ./drivers/fsl_common.o ./drivers/fsl_common_arm.o ./drivers/fsl_gpio.o ./drivers/fsl_lpflexcomm.o ./drivers/fsl_lpi2c.o ./drivers/fsl_lpspi.o ./drivers/fsl_lpuart.o ./drivers/fsl_mrt.o ./drivers/fsl_reset.o ./drivers/fsl_spc.o  ./device/system_MCXN947_cm33_core0.o  ./component/uart/fsl_adapter_lpuart.o  ./component/serial_manager/fsl_component_serial_manager.o ./component/serial_manager/fsl_component_serial_port_uart.o  ./component/lists/fsl_component_generic_list.o  ./board/board.o ./board/clock_config.o ./board/peripherals.o ./board/pin_mux.o   
+Memory region         Used Size  Region Size  %age Used
+  PROGRAM_FLASH0:       31656 B         1 MB      3.02%
+  PROGRAM_FLASH1:           0 B         1 MB      0.00%
+            SRAM:       19448 B       384 KB      4.95%
+           SRAMX:           0 B        96 KB      0.00%
+           SRAMH:           0 B        32 KB      0.00%
+         USB_RAM:           0 B         4 KB      0.00%
+Finished building target: leds.axf
+ 
+Performing post-build steps
+arm-none-eabi-size "leds.axf"; # arm-none-eabi-objcopy -v -O binary "leds.axf" "leds.bin" ; # checksum -p MCXN947 -d "leds.bin";
+   text	   data	    bss	    dec	    hex	filename
+  31568	     88	  19360	  51016	   c748	leds.axf
+ 
+
+18:45:36 Build Finished. 0 errors, 0 warnings. (took 849ms)
+

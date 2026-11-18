@@ -1,0 +1,6 @@
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/sem-int/CMSIS/core_cm33.h:2358:22:void __NVIC_EnableIRQ(IRQn_Type)	16	static
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/sem-int/CMSIS/core_cm33.h:2555:22:void __NVIC_SetPriority(IRQn_Type, uint32_t)	16	static
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/sem-int/drivers/fsl_common_arm.h:754:24:status_t EnableIRQ(IRQn_Type)	24	static
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/sem-int/drivers/fsl_gpio.h:487:20:void GPIO_SetPinInterruptConfig(GPIO_Type*, uint32_t, gpio_interrupt_config_t)	24	static
+../source/gpio_interrupts.cpp:44:6:void GPIO30_IRQHandler()	16	static
+../source/gpio_interrupts.cpp:89:6:void InitGPIOInterrupts()	8	static

@@ -1,0 +1,51 @@
+################################################################################
+# Automatically-generated file. Do not edit!
+################################################################################
+
+# Add inputs and outputs from these tool invocations to the build variables 
+CPP_SRCS += \
+../source/cpp_config.cpp \
+../source/main-demo-pwm.cpp 
+
+C_SRCS += \
+../source/semihost_hardfault.c 
+
+O_SRCS += \
+../source/demo-pwm-bin.o 
+
+CPP_DEPS += \
+./source/cpp_config.d \
+./source/main-demo-pwm.d 
+
+C_DEPS += \
+./source/semihost_hardfault.d 
+
+OBJS += \
+./source/cpp_config.o \
+./source/main-demo-pwm.o \
+./source/semihost_hardfault.o 
+
+
+# Each subdirectory must supply rules for building sources it contributes
+source/%.o: ../source/%.cpp source/subdir.mk
+	@echo 'Building file: $<'
+	@echo 'Invoking: MCU C++ Compiler'
+	arm-none-eabi-c++ -DCPU_MCXN947VDF -DCPU_MCXN947VDF_cm33 -DCPU_MCXN947VDF_cm33_core0 -DSDK_DEBUGCONSOLE=1 -DSERIAL_PORT_TYPE_UART=1 -D__MCUXPRESSO -D__USE_CMSIS -DDEBUG -D__NEWLIB__ -DSDK_OS_FREE_RTOS -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/drivers" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/utilities/debug_console" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/component/uart" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/utilities/debug_console/config" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/component/serial_manager" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/component/lists" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/utilities" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/CMSIS" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/CMSIS/m-profile" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/utilities/str" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/freertos/freertos-kernel-upstream/include" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/freertos/freertos-kernel/include" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/freertos/freertos-kernel/portable/GCC/ARM_CM33_NTZ/non_secure" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/board" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/freertos/freertos-kernel/template" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/freertos/freertos-kernel/template/ARM_CM33_3_priority_bits" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/mcxn-kit" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/source" -O0 -fno-common -g3 -gdwarf-4 -Wall -c -ffunction-sections -fdata-sections -fno-builtin -fno-rtti -fno-exceptions -fmerge-constants -fmacro-prefix-map="$(<D)/"= -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+source/%.o: ../source/%.c source/subdir.mk
+	@echo 'Building file: $<'
+	@echo 'Invoking: MCU C Compiler'
+	arm-none-eabi-gcc -D__NEWLIB__ -DCPU_MCXN947VDF -DCPU_MCXN947VDF_cm33 -DCPU_MCXN947VDF_cm33_core0 -DSDK_DEBUGCONSOLE=1 -DSERIAL_PORT_TYPE_UART=1 -D__MCUXPRESSO -D__USE_CMSIS -DDEBUG -DSDK_OS_FREE_RTOS -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/drivers" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/utilities/debug_console" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/component/uart" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/utilities/debug_console/config" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/component/serial_manager" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/component/lists" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/utilities" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/CMSIS" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/CMSIS/m-profile" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/utilities/str" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/freertos/freertos-kernel-upstream/include" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/freertos/freertos-kernel/include" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/freertos/freertos-kernel/portable/GCC/ARM_CM33_NTZ/non_secure" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/board" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/freertos/freertos-kernel/template" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/freertos/freertos-kernel/template/ARM_CM33_3_priority_bits" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/mcxn-kit" -I"/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/source" -O0 -fno-common -g3 -gdwarf-4 -Wall -c -ffunction-sections -fdata-sections -fno-builtin -fmerge-constants -fmacro-prefix-map="$(<D)/"= -mcpu=cortex-m33 -mfpu=fpv5-sp-d16 -mfloat-abi=hard -mthumb -D__NEWLIB__ -fstack-usage -specs=nano.specs -MMD -MP -MF"$(@:%.o=%.d)" -MT"$(@:%.o=%.o)" -MT"$(@:%.o=%.d)" -o "$@" "$<"
+	@echo 'Finished building: $<'
+	@echo ' '
+
+
+clean: clean-source
+
+clean-source:
+	-$(RM) ./source/cpp_config.d ./source/cpp_config.o ./source/main-demo-pwm.d ./source/main-demo-pwm.o ./source/semihost_hardfault.d ./source/semihost_hardfault.o
+
+.PHONY: clean-source
+

@@ -1,0 +1,186 @@
+drivers/fsl_lpspi.o drivers/fsl_lpspi.d: ../drivers/fsl_lpspi.c \
+ ../drivers/fsl_lpspi.h ../drivers/fsl_common.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/fsl_device_registers.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/MCXN947_cm33_core0.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_ADC.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/MCXN947_cm33_core0_COMMON.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/CMSIS/core_cm33.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/CMSIS/cmsis_version.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/CMSIS/cmsis_compiler.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/CMSIS/cmsis_gcc.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/CMSIS/m-profile/armv8m_mpu.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/system_MCXN947_cm33_core0.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/MCXN947_cm33_core0_features.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_AHBSC.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_BSP32.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_CACHE64_CTRL.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_CACHE64_POLSEL.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_CAN.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_CDOG.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_CMC.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_CRC.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_CTIMER.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_DIGTMP.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_DM.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_DMA.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_EIM.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_EMVSIM.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_ENET.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_ERM.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_EVTG.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_EWM.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_FLEXIO.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_FLEXSPI.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_FMU.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_FMUTEST.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_FREQME.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_GDET.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_GPIO.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_HPDAC.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_I2S.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_I3C.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_INPUTMUX.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_INTM.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_ITRC.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_LPCMP.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_LPDAC.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_LPI2C.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_LPSPI.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_LPTMR.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_LPUART.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_LP_FLEXCOMM.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_MAILBOX.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_MRT.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_NPX.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_OPAMP.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_OSTIMER.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_OTPC.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_PDM.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_PINT.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_PKC.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_PLU.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_PORT.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_POWERQUAD.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_PUF.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_PWM.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_QDC.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_RTC.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_S50.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_SCG.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_SCT.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_SEMA42.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_SINC.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_SMARTDMA.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_SPC.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_SYSCON.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_SYSPM.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_TRDC.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_TSI.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_USB.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_USBDCD.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_USBHS.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_USBHSDCD.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_USBNC.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_USBPHY.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_USDHC.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_UTICK.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_VBAT.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_VREF.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_WUU.h \
+ /poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_WWDT.h \
+ ../drivers/fsl_common_arm.h ../drivers/fsl_clock.h \
+ ../drivers/fsl_reset.h ../drivers/fsl_lpflexcomm.h
+../drivers/fsl_lpspi.h:
+../drivers/fsl_common.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/fsl_device_registers.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/MCXN947_cm33_core0.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_ADC.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/MCXN947_cm33_core0_COMMON.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/CMSIS/core_cm33.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/CMSIS/cmsis_version.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/CMSIS/cmsis_compiler.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/CMSIS/cmsis_gcc.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/CMSIS/m-profile/armv8m_mpu.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/system_MCXN947_cm33_core0.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/MCXN947_cm33_core0_features.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_AHBSC.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_BSP32.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_CACHE64_CTRL.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_CACHE64_POLSEL.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_CAN.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_CDOG.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_CMC.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_CRC.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_CTIMER.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_DIGTMP.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_DM.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_DMA.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_EIM.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_EMVSIM.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_ENET.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_ERM.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_EVTG.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_EWM.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_FLEXIO.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_FLEXSPI.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_FMU.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_FMUTEST.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_FREQME.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_GDET.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_GPIO.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_HPDAC.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_I2S.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_I3C.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_INPUTMUX.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_INTM.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_ITRC.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_LPCMP.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_LPDAC.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_LPI2C.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_LPSPI.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_LPTMR.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_LPUART.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_LP_FLEXCOMM.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_MAILBOX.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_MRT.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_NPX.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_OPAMP.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_OSTIMER.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_OTPC.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_PDM.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_PINT.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_PKC.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_PLU.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_PORT.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_POWERQUAD.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_PUF.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_PWM.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_QDC.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_RTC.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_S50.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_SCG.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_SCT.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_SEMA42.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_SINC.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_SMARTDMA.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_SPC.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_SYSCON.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_SYSPM.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_TRDC.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_TSI.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_USB.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_USBDCD.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_USBHS.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_USBHSDCD.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_USBNC.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_USBPHY.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_USDHC.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_UTICK.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_VBAT.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_VREF.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_WUU.h:
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/device/periph/PERI_WWDT.h:
+../drivers/fsl_common_arm.h:
+../drivers/fsl_clock.h:
+../drivers/fsl_reset.h:
+../drivers/fsl_lpflexcomm.h:

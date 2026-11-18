@@ -1,0 +1,335 @@
+// **************************************************************************
+//
+//                  FreeRTOS demo program for OSY labs
+//
+// Subject:         Operating systems
+// Topic:           FreeRTOS
+// Author:          Petr Olivka, petr.olivka@vsb.cz, 11/2026
+// Organization:    Department of Computer Science, FEECS,
+//                  VSB-Technical University of Ostrava, CZ
+//
+// File:            Semaphores and Interrupts Demo
+//
+// **************************************************************************
+
+/**
+ * @file    demo-pwm-bin.cpp
+ * @brief   Application entry point.
+ */
+
+#include "FreeRTOS.h"
+#include "task.h"
+#include "semphr.h"
+
+#include <stdio.h>
+#include <functional>
+#include <algorithm>
+#include "board.h"
+#include "peripherals.h"
+#include "pin_mux.h"
+#include "clock_config.h"
+#include "fsl_debug_console.h"
+
+#include "mcxn-kit.h"
+
+#include "demo-sem-int-bin.h"
+
+// **************************************************************************
+// MCXN-Kit Pin Assignments Section
+//
+// Button pin assignments. See MCXN-Kit documentation (APPS)
+//
+// Port Pin     Pin Name
+// ---------------------
+// P3   18      P3_18
+// P3   19      P3_19
+// P3   20      P3_20
+// P3   21      P3_21
+//
+// Kit LED pin assignments:
+//
+// Port Pin     Pin Name
+// ---------------------
+// P3   16      P3_16
+// P3   17      P3_17
+//
+// Red LED pin assignments:
+//
+// Port Pin     Pin Name
+// ---------------------
+// P4    0      P4_00
+// P4    1      P4_01
+// P4    2      P4_02
+// P4    3      P4_00
+// P4   12      P4_12
+// P4   13      P4_13
+// P4   16      P4_16
+// P4   20      P4_20
+//
+// RGB LED pin assignments:
+//
+// Port Pin     Pin Name
+// ---------------------_
+// P0   14      P0_14    \.
+// P0   15      P0_15     } RGB0
+// P0   22      P0_22   _/
+// P0   24      P0_24    \.
+// P0   25      P0_25     } RGB1
+// P0   26      P0_26   _/
+// P0   28      P0_28    \.
+// P0   29      P0_29     } RGB2
+// P0   30      P0_30   _/
+
+
+// **************************************************************************
+//! Global Data Section
+
+#define P3_18_GPIO                  GPIO3
+#define P3_18_PIN                   18
+#define P3_18_MASK                  ( 1U << 18 )
+#define P3_19_GPIO                  GPIO3
+#define P3_19_PIN                   19
+#define P3_19_MASK                  ( 1U << 19 )
+#define P3_20_GPIO                  GPIO3
+#define P3_20_PIN                   20
+#define P3_20_MASK                  ( 1U << 20 )
+#define P3_21_GPIO                  GPIO3
+#define P3_21_PIN                   21
+#define P3_21_MASK                  ( 1U << 21 )
+
+#define KIT_LED_NUM                 2
+#define RED_LED_NUM                 8
+#define RGB_LED_NUM                 9
+
+//! Buttons on MCXN-KIT - instances of class DigitalIn
+DigitalIn g_but_P3_18( P3_18 );
+DigitalIn g_but_P3_19( P3_19 );
+DigitalIn g_but_P3_20( P3_20 );
+DigitalIn g_but_P3_21( P3_21 );
+
+// all P3_xx LEDs in array
+DigitalOut g_kit_led[ KIT_LED_NUM ] =
+{
+        P3_16,
+        P3_17,
+};
+
+// all P4_xx LEDs in array
+DigitalOut g_red_led[ RED_LED_NUM ] =
+{
+        P4_00,
+        P4_01,
+        P4_02,
+        P4_03,
+        P4_12,
+        P4_13,
+        P4_16,
+        P4_20,
+};
+
+// all P0_xx LEDs in array
+DigitalOut g_rgb_led[ RGB_LED_NUM ] =
+{
+        P0_14,
+        P0_15,
+        P0_22,
+        P0_24,
+        P0_25,
+        P0_26,
+        P0_28,
+        P0_29,
+        P0_30,
+};
+
+
+
+// **************************************************************************
+// FreeRTOS Section
+
+// Task priorities.
+#define LOW_TASK_PRIORITY           ( configMAX_PRIORITIES - 4 )
+#define NORMAL_TASK_PRIORITY        ( configMAX_PRIORITIES - 3 )
+#define HIGH_TASK_PRIORITY          ( configMAX_PRIORITIES - 1 )
+
+#define TASK_NAME_LEFT_BUTTON       "left button"
+#define TASK_NAME_RIGHT_BUTTON      "right button"
+#define TASK_NAME_RED_LED           "red led"
+
+
+// global variables
+SemaphoreHandle_t g_sem_left_button;
+SemaphoreHandle_t g_sem_right_button;
+
+int32_t g_red_led_index = 0;
+
+
+extern "C" {
+void GPIO30_IRQHandler(void);
+}
+
+// ISR for GPIO3
+void GPIO30_IRQHandler(void)
+{
+    // DO NOT USE return in this Interrupt Service Routine!!!
+
+    // Get mask of all current interrupts
+    uint32_t l_mask = GPIO_GpioGetInterruptFlags( P3_18_GPIO );
+
+    TickType_t l_cur_tick = xTaskGetTickCount();
+    static TickType_t l_left_last = 0;
+    static TickType_t l_right_last = 0;
+
+    // Button P3_18
+    if ( ( l_mask & P3_18_MASK ) != 0 )
+    {
+        if ( l_left_last + 20 < l_cur_tick )
+        {
+            xSemaphoreGiveFromISR( g_sem_left_button, nullptr );
+            l_left_last = l_cur_tick;
+        }
+    }
+
+    // Button P3_19
+    if ( ( l_mask & P3_19_MASK ) != 0 )
+    {
+    }
+
+    // Button P3_20
+    if ( ( l_mask & P3_20_MASK ) != 0 )
+    {
+    }
+
+    // Button P3_21
+    if ( ( l_mask & P3_21_MASK ) != 0 )
+    {
+        if ( l_right_last + 20 < l_cur_tick )
+        {
+            xSemaphoreGiveFromISR( g_sem_right_button, nullptr );
+            l_right_last = l_cur_tick;
+        }
+    }
+
+    // Clear interrupt flags
+    GPIO_GpioClearInterruptFlags( P3_18_GPIO,
+            P3_18_MASK | P3_19_MASK | P3_20_MASK | P3_21_MASK );
+}
+
+// Initialize GPIO for interrupts
+void InitGPIOInterrupts()
+{
+    // Set correct priority
+    NVIC_SetPriority( GPIO30_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY + 1 );
+
+    // Enable interrupt for buttons
+    // Available interrupt methods: kPORT_InterruptFallingEdge,kPORT_InterruptRisingEdge, kPORT_InterruptEitherEdge;
+    GPIO_SetPinInterruptConfig( P3_18_GPIO, P3_18_PIN, kGPIO_InterruptFallingEdge );
+    GPIO_SetPinInterruptConfig( P3_19_GPIO, P3_19_PIN, kGPIO_InterruptFallingEdge );
+    GPIO_SetPinInterruptConfig( P3_20_GPIO, P3_20_PIN, kGPIO_InterruptFallingEdge );
+    GPIO_SetPinInterruptConfig( P3_21_GPIO, P3_21_PIN, kGPIO_InterruptFallingEdge );
+
+    // Enable interrupt
+    EnableIRQ( GPIO30_IRQn );
+
+    // Create binary semaphores
+    g_sem_left_button = xSemaphoreCreateBinary();
+    //g_sem_in_left_button = xSemaphoreCreateBinary();
+    //g_sem_in_right_button = xSemaphoreCreateBinary();
+    g_sem_right_button = xSemaphoreCreateBinary();
+}
+
+// Tasks
+void task_left_button( void *t_arg )
+{
+    while ( 1 )
+    {
+        xSemaphoreTake( g_sem_left_button, portMAX_DELAY );
+        vTaskDelay( 1 );
+        if ( g_but_P3_18.read() != 0 )
+        {
+            continue;
+        }
+
+        g_red_led_index--;
+    }
+}
+
+void task_right_button( void *t_arg )
+{
+    while ( 1 )
+    {
+        xSemaphoreTake( g_sem_right_button, portMAX_DELAY );
+        vTaskDelay( 1 );
+        if ( g_but_P3_21.read() != 0 )
+        {
+            continue;
+        }
+
+        g_red_led_index++;
+
+        vTaskDelay( 1 );
+    }
+}
+
+void task_show_red_led( void *t_arg )
+{
+    int32_t l_last_index = -1;
+
+    while ( 1 )
+    {
+        // check range of g_red_led_index
+        if ( g_red_led_index >= RED_LED_NUM )
+        {
+            g_red_led_index = RED_LED_NUM - 1;
+        }
+        if ( g_red_led_index < 0 )
+        {
+            g_red_led_index = 0;
+        }
+
+        // position changed?
+        if ( l_last_index != g_red_led_index )
+        {
+            if ( l_last_index < 0 )
+            {
+                l_last_index = g_red_led_index;
+            }
+
+            g_red_led[ l_last_index ].write( 0 );
+            g_red_led[ g_red_led_index ].write( 1 );
+            //GPIO_PinWrite( g_led_ptc[ l_last_index ].m_led_gpio, g_led_ptc[ l_last_index ].m_led_pin, 0 );
+            //GPIO_PinWrite( g_led_ptc[ g_red_led_index ].m_led_gpio, g_led_ptc[ g_red_led_index ].m_led_pin, 1 );
+
+            l_last_index = g_red_led_index;
+        }
+
+        vTaskDelay( 1 );
+    }
+}
+
+void InitDemoApp()
+{
+    InitGPIOInterrupts();
+
+    // Create tasks
+    if ( xTaskCreate(
+            task_left_button,
+            TASK_NAME_LEFT_BUTTON,
+            configMINIMAL_STACK_SIZE + 100,
+            NULL,
+            NORMAL_TASK_PRIORITY,
+            NULL) != pdPASS )
+    {
+        PRINTF( "Unable to create task '%s'!\r\n", TASK_NAME_LEFT_BUTTON );
+    }
+
+    if ( xTaskCreate( task_right_button, TASK_NAME_RIGHT_BUTTON, configMINIMAL_STACK_SIZE + 100, NULL, HIGH_TASK_PRIORITY, NULL) != pdPASS )
+    {
+        PRINTF( "Unable to create task '%s'!\r\n", TASK_NAME_RIGHT_BUTTON );
+    }
+
+    if ( xTaskCreate( task_show_red_led, TASK_NAME_RED_LED, configMINIMAL_STACK_SIZE + 100, NULL, HIGH_TASK_PRIORITY, NULL) != pdPASS )
+    {
+        PRINTF( "Unable to create task '%s'!\r\n", TASK_NAME_RED_LED );
+    }
+}
+

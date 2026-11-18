@@ -1,0 +1,16 @@
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/CMSIS/core_cm33.h:2358:22:void __NVIC_EnableIRQ(IRQn_Type)	16	static
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/CMSIS/core_cm33.h:2555:22:void __NVIC_SetPriority(IRQn_Type, uint32_t)	16	static
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/drivers/fsl_common_arm.h:754:24:status_t EnableIRQ(IRQn_Type)	24	static
+/poli/home/vyuka/osy/git/osy-mcxn-rtos-workspace.mcu-25.6/demo-pwm/drivers/fsl_gpio.h:487:20:void GPIO_SetPinInterruptConfig(GPIO_Type*, uint32_t, gpio_interrupt_config_t)	24	static
+../source/demo-pwm-bin.cpp:178:6:void GPIO30_IRQHandler()	16	static
+../source/demo-pwm-bin.cpp:240:6:void InitGPIOInterrupts()	8	static
+../source/demo-pwm-bin.cpp:263:6:void task_left_button(void*)	16	static
+../source/demo-pwm-bin.cpp:278:6:void task_in_left_button(void*)	16	static
+../source/demo-pwm-bin.cpp:293:6:void task_in_right_button(void*)	16	static
+../source/demo-pwm-bin.cpp:312:6:void task_right_button(void*)	16	static
+../source/demo-pwm-bin.cpp:334:6:void task_snake_pwm(void*)	48	static
+../source/demo-pwm-bin.cpp:388:6:void task_rgb_pwm(void*)	40	static
+../source/demo-pwm-bin.cpp:421:6:void task_rgb_set(void*)	40	static
+../source/demo-pwm-bin.cpp:458:6:void InitDemoApp()	16	static
+../source/demo-pwm-bin.cpp:504:1:void __static_initialization_and_destruction_0()	16	static
+../source/demo-pwm-bin.cpp:504:1:cpp)	8	static

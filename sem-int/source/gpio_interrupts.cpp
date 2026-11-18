@@ -1,0 +1,97 @@
+// **************************************************************************
+//
+//                  FreeRTOS demo program for OSY labs
+//
+// Subject:         Operating Systems
+// Author:          Petr Olivka, petr.olivka@vsb.cz, 11/2026
+// Organization:    Department of Computer Science, FEECS,
+//                  VSB-Technical University of Ostrava, CZ
+//
+// File:            GPIO initialization for interrupts
+//
+// **************************************************************************
+//
+// FreeRTOS kernel includes.
+#include "FreeRTOS.h"
+#include "semphr.h"
+
+// System includes.
+#include <stdio.h>
+#include "board.h"
+#include "peripherals.h"
+#include "pin_mux.h"
+#include "mcxn-kit.h"
+#include "gpio_interrupts.h"
+
+#define PIN_MASK( PIN_NAME ) ( 1U << pinname2pinnum( PIN_NAME ) )
+
+extern "C" {
+void GPIO30_IRQHandler(void);
+}
+
+// ISR for GPIO3
+void GPIO30_IRQHandler(void)
+{
+    // DO NOT USE return in this Interrupt Service Routine!!!
+
+    // Get mask of all current interrupts
+    uint32_t l_mask = GPIO_GpioGetInterruptFlags( pinname2gpio( P3_18 ) );
+
+    TickType_t l_cur_tick = xTaskGetTickCount();
+
+    // Button P3_18
+    if ( ( l_mask & PIN_MASK( P3_18 ) ) != 0 )
+    {
+        // RECOMMENDED SOLUTION!!!
+        // wakeup some process using semaphore
+        xSemaphoreGiveFromISR( g_sem_left_button, nullptr );
+    }
+
+    // Button P3_19
+    if ( ( l_mask & PIN_MASK( P3_19 ) ) != 0 )
+    {
+    }
+
+    // Button P3_20
+    if ( ( l_mask & PIN_MASK( P3_20 ) ) != 0 )
+    {
+    }
+
+    // Button P3_21
+    if ( ( l_mask & PIN_MASK( P3_21 ) ) != 0 )
+    {
+        // INCORRECT SOLUTION!!!
+        // Direct changing global variable will not send any event to RTOS application
+        if ( g_red_led_index < 7 )
+            g_red_led_index++;
+
+        // Correct solution: use semaphore. See also Button P3_18 above.
+        // xSemaphoreGiveFromISR( g_sem_right_switch, nullptr );
+    }
+
+    // Clear interrupt flags
+    GPIO_GpioClearInterruptFlags( pinname2gpio( P3_18 ),
+            PIN_MASK( P3_18 ) |  PIN_MASK( P3_19 ) | PIN_MASK( P3_20 ) | PIN_MASK( P3_21 ) );
+}
+
+// Initialize GPIO for interrupts
+void InitGPIOInterrupts()
+{
+    // Set correct priority
+    NVIC_SetPriority( GPIO30_IRQn, configLIBRARY_MAX_SYSCALL_INTERRUPT_PRIORITY + 1 );
+
+    // Enable interrupt for buttons
+    // Available interrupt methods: kPORT_InterruptFallingEdge,kPORT_InterruptRisingEdge, kPORT_InterruptEitherEdge;
+    GPIO_SetPinInterruptConfig( pinname2gpio( P3_18 ), pinname2pinnum( P3_18 ), kGPIO_InterruptFallingEdge );
+    GPIO_SetPinInterruptConfig( pinname2gpio( P3_19 ), pinname2pinnum( P3_19 ), kGPIO_InterruptFallingEdge );
+    GPIO_SetPinInterruptConfig( pinname2gpio( P3_20 ), pinname2pinnum( P3_20 ), kGPIO_InterruptFallingEdge );
+    GPIO_SetPinInterruptConfig( pinname2gpio( P3_21 ), pinname2pinnum( P3_21 ), kGPIO_InterruptFallingEdge );
+
+    // Enable interrupt
+    EnableIRQ( GPIO30_IRQn );
+
+    // Create binary semaphores
+    g_sem_left_button = xSemaphoreCreateBinary();
+    g_sem_right_button = xSemaphoreCreateBinary();
+}
+
