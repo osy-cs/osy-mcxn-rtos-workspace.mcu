@@ -52,10 +52,13 @@ void _mcu_initialization()
 // Start application
 int main(void)
 {
-    PRINTF( "FreeRTOS demo program uses interrupts (ISR) and semaphores.\r\n" );
-    PRINTF( "GPIO interrupts are enabled.\r\n" );
-    PRINTF( "Pressing the right button will move red LED to right side.\r\n" );
-    PRINTF( "Pressing the left button will move red LED to left side.\r\n" );
+    PRINTF( "FreeRTOS PWM demo program .\r\n" );
+    PRINTF( "GPIO interrupt is enabled.\r\n" );
+    PRINTF( "Red LEDs are set to PWM 5% and one LED is runs from side to side.\r\n" );
+    PRINTF( "P3_18 button changes mode of RGB LEDs between PWM and SET.\r\n" );
+    PRINTF( "P3_19 button select one RGB color in SET mode.\r\n" );
+    PRINTF( "P3_20 button decrease PWM of selected color in SET mode.\r\n" );
+    PRINTF( "P3_21 button increase PWM of selected color in SET mode.\r\n" );
 
     // Initialize demo application
     InitDemoApp();
